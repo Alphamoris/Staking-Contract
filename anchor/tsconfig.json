@@ -1,13 +1,28 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
+    "target": "es2018",
+    "lib": ["es2018"],
     "module": "commonjs",
-    "types": ["jest", "node"],
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["es2015"],
-    "target": "es6",
-    "resolveJsonModule": true,
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "types": ["jest", "node"],
+    "typeRoots": ["../node_modules/@types", "./node_modules/@types"],
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "declaration": false,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "tests/**/*",
+    "target/types/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
